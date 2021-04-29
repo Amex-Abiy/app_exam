@@ -13,9 +13,9 @@ class PostDataProvider {
 
   Future<List<Post>> getPosts() async {
     // TO-DO: implement pagination !! DONT FORGET
-    int start = HomeState.start;
+    // int start = HomeState.start;
     int limit = HomeState.limit;
-    final response = await httpClient.get('$_baseUrl/posts/?_start=$start&_limit=$limit');
+    final response = await httpClient.get('$_baseUrl/posts/?_start=0&_limit=$limit');
     final body = json.decode(response.body);
 
     if(body[0] != null) {

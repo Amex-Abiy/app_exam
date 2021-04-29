@@ -53,7 +53,7 @@ class HomeState extends State<Home> {
     _scrollController..addListener(() {
     if (_scrollController.position.pixels == _scrollController.position.maxScrollExtent) {
       setState(() {
-        start += limit;
+        limit += 10;
       });
       BlocProvider.of<PostBloc>(context).add(GetPosts());
     }
